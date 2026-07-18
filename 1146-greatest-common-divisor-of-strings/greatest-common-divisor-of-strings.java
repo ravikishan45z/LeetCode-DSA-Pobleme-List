@@ -1,0 +1,19 @@
+class Solution {
+    public String gcdOfStrings(String str1, String str2) {
+        if(!(str1 + str2).equals(str2+str1)) {
+            return "";
+        }
+
+        int lenGCD = gcd(str1.length(), str2.length());
+        return str1.substring(0, lenGCD);
+    }
+
+    public int gcd(int a, int b) {
+        while (b != a) {
+            if (b >= a) b -= a;
+            else a -= b;
+        }
+        return a;
+
+    }
+}
